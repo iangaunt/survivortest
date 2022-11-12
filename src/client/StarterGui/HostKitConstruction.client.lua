@@ -90,10 +90,10 @@ local HostKitApp = e("Frame", {
             SliceCenter = Rect.new(300, 80, 500, 720),
         }, {
             UIGradient = e("UIGradient", {
-                Color = ColorSequence.new(
+                Color = ColorSequence.new({
                     ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
                     ColorSequenceKeypoint.new(1, Color3.fromRGB(168, 168, 168))
-                ),
+                }),
                 Rotation = 100
             }),
             MainKit = e("Frame", {
@@ -105,12 +105,40 @@ local HostKitApp = e("Frame", {
                 Size = UDim2.new(0.925, 0, 0.937, 0),
             }, {
                 UIListLayout = e("UIListLayout", {
-                    
+                    HorizontalAlignment = Enum.HorizontalAlignment.Center,
+                    SortOrder = Enum.SortOrder.LayoutOrder
                 }),
                 NavBar = e("Frame", {
-
+                    BackgroundTransparency = 1,
+                    LayoutOrder = 1,
+                    Size = UDim2.new(1, 0, 0.15, 0)
+                }, {
+                    UIListLayout = e("UIListLayout", {
+                        FillDirection = Enum.FillDirection.Horizontal,
+                        HorizontalAlignment = Enum.HorizontalAlignment.Center,
+                        VerticalAlignment = Enum.VerticalAlignment.Bottom
+                    }),
+                    Back = Button({
+                        LayoutOrder = 1,
+                        Name = "Back",
+                        Size = UDim2.new(0.15, 0, 0.885, 0),
+                        SliceScale = 0.15,
+                        Text = "×",
+                    }),
+                    Header = e("ImageLabel", {
+                        BackgroundTransparency = 1,
+                        Image = backgroundImage,
+                        ImageColor3 = Color3.fromRGB(177, 177, 177),
+                        LayoutOrder = 2,
+                        ScaleType = "Slice",
+                        Size = UDim2.new(0.84, 0, 0.83, 0),
+                        SliceCenter = Rect.new(106, 80, 698, 720),
+                        SliceScale = 0.06
+                    })
                 }),
                 Lists = e("Frame", {
+                    
+                }, {
 
                 })
             })
